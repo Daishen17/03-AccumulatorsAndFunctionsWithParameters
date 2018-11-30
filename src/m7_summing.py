@@ -4,8 +4,21 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Yifan Dai.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
+import math
+def sum_of_digits(number):
+    if number < 0:
+        number = -number
+
+    digit_sum = 0
+    while True:
+        if number == 0:
+            break
+        digit_sum = digit_sum + (number % 10)
+        number = number // 10
+
+    return digit_sum
 
 
 def main():
@@ -14,10 +27,11 @@ def main():
     run_test_sum_square_roots()
 
 
+
 def run_test_sum_cosines():
     """ Tests the   sum_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function.
+    # DONE: 2. Implement this function.
     #   It TESTS the  sum_cosines  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -29,19 +43,30 @@ def run_test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
 
+    expected = 0.5403023058681398
+    answer = sum_cosines(1)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 0.4161468365471424
+    answer = sum_cosines(2)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 0.9899924966004454
+    answer = sum_cosines(3)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
 
 def sum_cosines(n):
-    """
-    What comes in:  A non-negative integer n.
-    What goes out:  The sum of the cosines of the integers
-       0, 1, 2, 3, ... n, inclusive, for the given n.
-    Side effects:   None.
-    Example:
-      If n is 3, this function returns
-        cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
-    """
+        C = math.cos(n)
+
+        return sum_of_digits(C)
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -53,7 +78,7 @@ def sum_cosines(n):
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function.
+    # DONE: 4. Implement this function.
     #   It TESTS the  sum_square_roots  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -65,22 +90,30 @@ def run_test_sum_square_roots():
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
 
+    expected = 1
+    answer = sum_square_roots(1)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 1.4142135623730951
+    answer = sum_square_roots(2)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 1.7320508075688772
+    answer = sum_square_roots(3)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
 
 def sum_square_roots(n):
-    """
-    What comes in:  A non-negative integer n.
-    What goes out:  The sum of the square roots of the integers
-       2, 4, 6, 8, ... 2n    inclusive, for the given n.
-           So if n is 7, the last term of the sum is
-           the square root of 14 (not 7).
-    Side effects:   None.
-    Example:
-      If n is 5, this function returns
-         sqrt(2) + sqrt(4) + sqrt(6) + sqrt(8) + sqrt(10),
-      which is about 11.854408.
-    """
+    HDD = math.sqrt(n)
+    return sum_of_digits(HDD)
+
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    #DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
