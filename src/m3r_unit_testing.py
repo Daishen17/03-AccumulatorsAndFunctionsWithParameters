@@ -21,7 +21,6 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 import rosegraphics as rg
 import math
 
-
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_distance()
