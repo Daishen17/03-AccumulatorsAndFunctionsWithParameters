@@ -10,7 +10,7 @@ import math
 def sum_of_digits(number):
     if number < 0:
         number = -number
- 
+
     digit_sum = 0
     while True:
         if number == 0:
